@@ -1,10 +1,10 @@
 {
-  "name": "projectname",
+  "name": "ahha-frontend",
   "version": "1.0.0",
   "author": "Amy (Haywood) Dutton",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahaywood/projectname.git"
+    "url": "https://github.com/ahaywood/ahha-frontend.git"
   },
   "devDependencies": {
     "babel-register": "^6.14.0",
@@ -34,6 +34,7 @@
     "gulp-uglify": "^1.0.1",
     "gulp-watch": "^1.0.7",
     "imagemin-pngquant": "^4.0.0",
-    "node-gyp": "^3.4.0"
+    "node-gyp": "^3.4.0",
+    "node-sass": "^4.5.3"
   }
 }
