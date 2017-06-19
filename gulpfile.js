@@ -45,7 +45,9 @@ gulp.task('sprites', function () {
 gulp.task('styles', function() {
 	gulp.src('assets/src/scss/main.scss')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(sass())
+		.pipe(sass({
+			includePaths: 'bower_components'
+		}))
 		.pipe(prefix("last 2 versions"))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('assets/dist/css'))
