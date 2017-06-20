@@ -18,9 +18,9 @@ var gulp = require('gulp'),
 	rename = require("gulp-rename"),
 	inject = require('gulp-inject'),
 	cheerio = require('gulp-cheerio'),
-	chug = require('gulp-chug'),
 	browserSync = require('browser-sync').create(),
-	del = require('del');
+	del = require('del'),
+	fileinclude = require('gulp-file-include');
 
 
 // CREATE SVG SPRITE
@@ -46,8 +46,8 @@ gulp.task('styles', function() {
 	gulp.src('assets/src/scss/main.scss')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass({
-			includePaths: 'bower_components'
-		}))
+			includePaths: ['bower_components']
+		}) )
 		.pipe(prefix("last 2 versions"))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('assets/dist/css'))
@@ -80,12 +80,7 @@ gulp.task('img', function () {
 
   	gulp.src('assets/src/img/*')
   		.pipe(filter)
-		.pipe(cache(imagemin([
-			imagemin.gifsicle({interlaced:true}),
-			imagemin.jpegtran({progressive:true}),
-			imagemin.optipng({optimizationLevel:3}),
-			imagemin.svgo({plugins: [{removeViewBox: false}]})
-		])))
+		.pipe(cache(imagemin()))
 		.pipe(gulp.dest('assets/dist/img/'));
 });
 
@@ -105,7 +100,9 @@ gulp.task('clear', function (done) {
 
 // CLEAN UP
 gulp.task('clean', function() {
-	return del.sync('dist');
+	return del([
+    	'assets/dist/**/*',
+  	]);
 });
 
 
@@ -125,8 +122,12 @@ gulp.task('serve', ['styles'], function() {
 
 
 
+
 // WATCH
 gulp.task('watch', ['serve', 'styles'], function() {
+
+	// Watch .html files
+	gulp.watch('assets/src/html/*.html', ['html']);
 
     // Watch .scss files
     gulp.watch('assets/src/scss/**/*.scss', ['styles']);
