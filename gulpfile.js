@@ -110,8 +110,8 @@ gulp.task('clean', function() {
 gulp.task('serve', ['styles'], function() {
     browserSync.init({
 		open: 'external',
-		host: 'projectname.dev',
-        proxy: 'projectname.dev',
+		host: 'amydutton.dev',
+        proxy: 'amydutton.dev',
 		ghostMode: {
 			clicks: true,
 			forms: true,

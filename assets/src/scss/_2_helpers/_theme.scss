@@ -3,14 +3,25 @@
 \*------------------------------------*/
 
 // COLOR
-
+$primary: $color-green;
 
 
 
 
 // TYPOGRAPHY
+@mixin condensed() {
+    @include knockout28;
+}
 
+@mixin serif() {
+    @include noto;
+}
+
+@mixin sans-serif() {
+    @include din;
+}
 
 
 
 // SPACING, MARGINS, AND PADDING
+$aside-left: 70px;

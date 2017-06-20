@@ -2,8 +2,63 @@
     #FOOTER
 \*------------------------------------*/
 .footer {
+	@include proxima;
+	background: $color-almost-white;
+	color: black;
+	font-size: em(14px);
+	text-align: center;
+	text-transform: uppercase;
+	padding: 75px 0 60px;
+
+	.social-media {
+		margin-bottom: 60px;
+
+		li {
+			margin-right: 20px;
+		}
+
+		svg {
+			height: 32px;
+			width: 32px;
+		}
+	}
+
+	.legal {
+		margin-bottom: 15px;
+
+		ul {
+			@include no-margin-padding;
+			@include no-bullets;
+
+			li {
+				border-right: 1px solid rgba($color-black, .15);
+				display: inline-block;
+				margin-right: 15px;
+				padding-right: 15px;
+
+				&:last-child {
+					margin-right: 0;
+					padding-right: 0;
+				}
+
+				a {
+					color: $color-black;
+					text-decoration: none;
+				}
+			}
+		}
+	}
 
 	.copyright {
-		
+
+		a {
+			color: black;
+			text-decoration: none;
+
+			&:hover {
+				color: black;
+				background: $color-green;
+			}
+		}
 	}
 }

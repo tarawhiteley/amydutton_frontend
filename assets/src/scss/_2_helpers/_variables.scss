@@ -8,9 +8,53 @@ $font-path          : "#{$baseurl}/assets/dist/fonts";
 
 
 /* COLORS */
+$color-green        : #00FF50;
+$color-black        : #000;
+$color-white        : #FFF;
+$color-gray-4       : #4a4a4a;
+$color-gray-9       : #9b9b9b;
+$color-gray-d       : #d8d8d8;
+$color-almost-white : #efefef;
 
 
-
+/* FONT WEIGHTS */
+$weight-regular : 400;
+$weight-bold : 700;
 
 
 /* FONTS */
+$knockout27: "Knockout 27 A", "Knockout 27 B";
+$knockout28: "Knockout 28 A", "Knockout 28 B";
+$din : "din-2014";
+$proxima : "proxima-nova";
+$noto : 'Noto Serif', serif;
+
+@mixin knockout27() {
+    font-family: $knockout27;
+    font-style: normal;
+    font-weight: $weight-regular;
+    text-transform: uppercase;
+}
+
+@mixin knockout28 {
+    font-family: $knockout28;
+    font-style: normal;
+    font-weight: $weight-regular;
+    text-transform: uppercase;
+}
+
+@mixin din {
+    font-family: $din;
+    font-style: normal;
+    font-weight: $weight-bold;
+}
+
+@mixin proxima {
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: $weight-regular;
+}
+
+@mixin noto {
+    font-family: $noto;
+}

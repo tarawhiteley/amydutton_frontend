@@ -1,3 +1,30 @@
 /*------------------------------------*\
     #GRID-SETTINGS
 \*------------------------------------*/
+
+.page {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "aside header"
+        "aside main"
+        "aside footer";
+    height: 100vh;
+}
+
+aside {
+    grid-area: aside;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}

@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #SOCIAL-MEDIA
+\*------------------------------------*/
+
+.social-media {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        @include no-margin-padding;
+        @include no-bullets;
+
+        li {
+            display: inline-block;
+            margin-right: 50px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+    			color: rgba($color-black, .18);
+
+    			&:hover {
+    				color: $color-green;
+    			}
+
+                svg {
+                    fill: currentColor;
+                    height: 85px;
+                    width: 85px;
+                }
+            }
+        }
+    }
+}

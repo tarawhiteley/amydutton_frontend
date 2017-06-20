@@ -1,11 +1,9 @@
 /*------------------------------------*\
-    #TYPOGRAPHY
+    #MAIN
 \*------------------------------------*/
 
-h1 {
-
-}
-
-p {
-    
+.main {
+    @include serif;
+    box-sizing: border-box;
+    padding: 20px;
 }

@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    #ASIDE
+\*------------------------------------*/
+
+aside {
+    background: black;
+    color: white;
+
+
+	.logo {
+		@include remove-text;
+		background: $color-white;
+        display: flex;
+        justify-content: center;
+        mask: path('logo.svg') no-repeat;
+        margin: 30px auto 25px auto;
+        height: 170px;
+        width: 180px;
+
+        &:hover {
+            background: $color-green;
+        }
+
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+	}
+}
+
+
+/*------------------------------------*\
+    #NAV
+\*------------------------------------*/
+
+.nav {
+
+	ul {
+        @include no-bullets;
+        padding: 0;
+        margin: 0 0 50px $aside-left;
+
+		> li {
+            @include knockout27;
+            font-size: em(50px);
+            line-height: em(60px, 50px);
+
+			> a {
+                color: $color-white;
+                text-decoration: none;
+
+				&:hover {
+                    color: $color-green;
+				}
+			}
+
+            body.home &.home a,
+            body.about &.about a {
+                color: $color-green;
+            }
+		}
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SEARCH
+\*------------------------------------*/
+.search {
+    @include proxima;
+    text-transform: uppercase;
+    margin-left: $aside-left;
+
+    a {
+        color: rgba($color-white, .5);
+        text-decoration: none;
+
+        &:hover {
+            color: $color-green;
+        }
+
+        svg {
+            fill: currentColor;
+            height: 14px;
+            margin-right: 5px;
+            position: relative;
+            top: 2px;
+            width: 14px;
+        }
+    }
+}
